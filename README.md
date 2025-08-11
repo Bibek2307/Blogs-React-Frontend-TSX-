@@ -1,69 +1,49 @@
-# React + TypeScript + Vite
+# 📰 Blogs Frontend – React + TypeScript
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A **pure frontend React + TypeScript** project that simulates a modern blogging platform.  
+Users can browse blogs, search, add new blog entries, follow people, and explore trending topics — all in a clean, responsive UI.
 
-Currently, two official plugins are available:
+![Project Preview](./preview.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+- ➕ **Add New Blog** button with modal/form integration
+- 📄 **Blog Cards** displaying:
+  - Blog image
+  - Title & short description
+  - Publish date
+  - Edit, bookmark, and delete options
+- 👥 **People To Follow** section with follow/unfollow state
+- 📈 **Today's Top Trends** showcasing trending articles
+- 🏷 **Topics For You** tag recommendations
+- ⚡ Fully responsive & interactive UI
+- 🛡 **TypeScript** for safer, maintainable code
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠 Tech Stack
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **React** (with Functional Components)
+- **TypeScript**
+- **React Hooks** (`useState`, `useEffect`)
+- **Tailwind CSS**
+- **React Icons** for UI icons
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Getting Started
+
+1. **Clone the Repository**
+     ```bash
+   git clone https://github.com/your-username/blogs-frontend.git
+   cd blogs-frontend
+    ```
+  ```bash
+2. npm install
+  ```
+```bash
+3. npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📌 Notes
+- This is frontend only — no backend or database is connected
+- All data is mock data stored in local state
+- Refreshing the page will reset content to defaults
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
